@@ -3,6 +3,7 @@ const cac = require('cac')
 const sao = require('sao')
 const update = require('update-notifier')
 const pkg = require('./package')
+const serve = require('./src/parcel')
 
 const cli = require('cac')()
  
@@ -28,6 +29,7 @@ cli
 cli
   .command('serve ', 'Serve a directory')
   .action((dir) => {
+    serve(dir)
     console.log(dir);
 })
 
