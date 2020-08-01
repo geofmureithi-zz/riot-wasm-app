@@ -1,0 +1,16 @@
+{
+  "name": "riot-wasm-app",
+  "version": "0.1.0",
+  "description": "Bootstrap a Riot.js application with your favourite language in the script tag with Wasm",
+  "main": "cli.js",
+  "author": "Njuguna Mureithi",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "cac": "^6.6.1",
+    "parcel-bundler": "^1.12.4",
+    "sao": "^1.7.1",
+    "superb": "^4.0.0",
+    "update-notifier": "^4.1.0"
+  }
+}
