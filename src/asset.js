@@ -29,6 +29,7 @@ class RiotWasmAsset extends Asset {
 
   async generate() {
     const options = (await this.getConfig(['.riotwrc', '.riotwrc.js', 'riotw.config.js'])) || {}
+    require('./languages/rust/preprocessor.js')
     const {code, map} = compile(this.contents, {
       file: this.relativeName,
       ...options

@@ -1,0 +1,46 @@
+<app>
+<script type="rust" module="counter">
+        use serde::{Serialize, Deserialize};
+
+        #[derive(Serialize, Deserialize)]
+        pub struct CounterState {
+            counter: i32
+        }
+
+        impl Default for CounterState {
+            fn default() -> Self {
+                CounterState {
+                    counter: 42
+                }
+            }
+        }
+
+        #[allow(non_camel_case_types)]
+        #[derive(Serialize, Deserialize)]
+        pub enum CounterAction {
+            increment(i32),
+            decrement(i32),
+            double
+        }
+    
+        fn counter_reducer(state: CounterState, action: CounterAction) -> CounterState {
+            match action {
+                CounterAction::increment(i) => CounterState {
+                    counter: state.counter + i
+                },
+                CounterAction::decrement(i) => CounterState {
+                    counter: state.counter - i
+                },
+                CounterAction::double => CounterState {
+                    counter: state.counter * 2
+                }
+            }
+        }
+        export!(counter_state, counter_dispatch, counter_reducer, CounterState, CounterAction);
+</script>
+
+    <p> Counter: {state.counter}</p>
+    <button onclick={() => increment(1)}>Add +</button>
+    <button onclick={() => decrement(1)}>Subtract -</button>
+    <button onclick={() => double()}>Double * 2</button>
+</app>
