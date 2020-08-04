@@ -1,0 +1,21 @@
+{
+    "name": "<%= name %>",
+    "description": "<%= description %>",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "riot-wasm-scripts serve",
+      "build": "riot-wasm-scripts build"
+    },
+    "dependencies": {
+        "@riotjs/lazy": "^1.0.1",
+        "@riotjs/route": "^5.3.3",
+        "riot": "^4.8.2"
+    },
+    "devDependencies": {
+        "riot-wasm-scripts": "latest"
+    },
+    "author": "",
+    "license": "ISC"
+  }

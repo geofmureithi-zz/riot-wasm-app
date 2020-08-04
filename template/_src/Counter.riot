@@ -1,0 +1,13 @@
+<app>
+    <script type="application/x-rust" src="counter.rs"></script>  
+    <div>
+        <div>
+            <div>Your Counter is at { state.counter }</div>
+            <div>
+                <button onclick={() => increment(1)}>Add +</button>
+                <button onclick={() => decrement(1)}>Subtract -</button>
+                <button onclick={() => double()}>Double * 2</button>
+            </div>
+        </div>
+    </div>
+</app>
